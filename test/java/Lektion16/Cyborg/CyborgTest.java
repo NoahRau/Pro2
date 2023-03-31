@@ -3,16 +3,39 @@ package Lektion16.Cyborg;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
+
 
 class CyborgTest {
     @Test
-    public void testeEntscheidung(){
-        Mensch Justus = new Mensch();
-        Roboter C3 = new Roboter();
-        Cyborg R2 = new Cyborg(Justus,C3);
-        assertEquals(R2.entscheide(Gefahr.GEFAHR_VORNE),Entscheidung.BREMSEN);
-        assertEquals(R2.entscheide(Gefahr.GEFAHR_LINKS),Entscheidung.RECHTS);
-        assertEquals(R2.entscheide(Gefahr.GEFAHR_RECHTS),Entscheidung.LINKS);
+    public void testEntscheide() {
+        // Erstelle Mock-Objekte für die Mensch- und Roboter-Klassen
+        Mensch menschMock = mock(Mensch.class);
+        Roboter roboterMock = mock(Roboter.class);
+
+        // Erstelle ein Spy-Objekt für den Cyborg
+        Cyborg cyborg = spy(new Cyborg(menschMock, roboterMock));
+
+        // Definiere das Verhalten der Mock-Objekte
+        when(menschMock.entscheide(Gefahr.GEFAHR_LINKS)).thenReturn(Entscheidung.LINKS);
+        when(roboterMock.entscheide(Gefahr.GEFAHR_LINKS)).thenReturn(Entscheidung.RECHTS);
+        when(cyborg.zufallszahl()).thenReturn(0.4);
+
+        // Rufe die Methode auf dem Spy-Objekt auf
+        Entscheidung entscheidung = cyborg.entscheide(Gefahr.GEFAHR_LINKS);
+
+        // Überprüfe das Ergebnis
+        assertEquals(Entscheidung.LINKS, entscheidung);
+
+        //Roboter entscheidet
+
+        when(cyborg.zufallszahl()).thenReturn(0.6);
+
+        // Rufe die Methode auf dem Spy-Objekt auf
+         entscheidung = cyborg.entscheide(Gefahr.GEFAHR_LINKS);
+
+        // Überprüfe das Ergebnis
+        assertEquals(Entscheidung.RECHTS, entscheidung);
     }
 
 }
