@@ -9,6 +9,10 @@ public class Cyborg {
         this.roboter = roboter;
     }
 
+    public double zufallszahl(){
+        return Math.random();
+    }
+
     public Entscheidung entscheide(Gefahr situation) {
         Entscheidung entscheidungMensch = mensch.entscheide(situation);
         Entscheidung entscheidungRoboter = roboter.entscheide(situation);
@@ -16,7 +20,7 @@ public class Cyborg {
             return entscheidungMensch;
         } else {
             // in 50% der Fälle wird die Entscheidung des Menschen getroffen
-            if (Math.random() < 0.5) {
+            if (zufallszahl() < 0.5) {
                 return entscheidungMensch;
             }
             else return entscheidungRoboter;
