@@ -1,4 +1,4 @@
-Wed Mar 22 13:40:33 UTC 2023 Thread[RMI TCP Connection(2)-127.0.0.1,5,RMI Runtime] Cleanup action starting
+Wed May 10 12:08:48 UTC 2023 Thread[RMI TCP Connection(2)-127.0.0.1,5,RMI Runtime] Cleanup action starting
 ERROR XBM0J: Directory C:\Users\raupo\IdeaProjects\Pro2 already exists.
 	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:300)
 	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:295)
@@ -41,7 +41,7 @@ ERROR XBM0J: Directory C:\Users\raupo\IdeaProjects\Pro2 already exists.
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
 Cleanup action completed
-Wed Mar 22 13:40:33 UTC 2023 Thread[RMI TCP Connection(2)-127.0.0.1,5,RMI Runtime] Cleanup action starting
+Wed May 10 12:08:48 UTC 2023 Thread[RMI TCP Connection(2)-127.0.0.1,5,RMI Runtime] Cleanup action starting
 java.sql.SQLException: Failed to create database '', see the next exception for details.
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:115)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:141)

@@ -12,6 +12,6 @@ public class Tests {
     }
     @Test
     public void testConversionTable(){
-        assertEquals("2", SMS.conversionTable.get('A'));
+        assertEquals("222", SMS.conversionTable.get('A'));
     }
 }
